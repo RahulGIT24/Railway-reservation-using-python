@@ -1,0 +1,14 @@
+	******************************* YOUR SEATS ARE Cancelled *******************************
+NAME OF THE TRAIN IS: GUPTA EXPRESS
+NAME OF RECEIPANT: Rahul
+
+SEATS BOOKED: 0
+DESTINATION: DELHI TO PUNE
+AMOUNT TO PAY: 0 Rs.
+RECEIPT GENERATED ON: 2022-07-23
+TIME OF BOOKING: 22:03:58
+YOUR UNIQUE ID: 5510640135
+
+
+************************ THANKS FOR USING OUR SERVICE. HAVE A GOOD DAY Rahul
+************************
