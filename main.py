@@ -222,11 +222,47 @@ YOUR UNIQUE ID: {self.UniqueID}
         except Exception:
             print("An unknown Error occured or ID not existed")
 
+    def yourInfo(self):
+        try:
+            ask = int(input("Enter a Unique ID: "))
+            with open(f"Unique ID's/{ask}.txt") as file:
+                read = file.readline()
+                read1 = file.readline()
+                read2 = file.readline()
+            if (str(ask) == read2):
+                print("ID found")
+                time.sleep(1)
+                print("Gathering Your Information")
+                info = (f'''
+Name of the user - {read1}
+Tickets Booked - {read}
+Destination - {self.Destination}
+Amount to Pay - {self.Fare*int(read)}
+Unique ID - {ask}
+''')
+                time.sleep(1.5)
+                print(info)
+                time.sleep(3)
+                ask2 = input("Press 1 to continue 0 to exit")
+                if(ask2 == "1"):
+                    pass
+                elif (ask2 == "0"):
+                    print("Exiting program")
+                    time.sleep(2)
+                    exit()
+                else:
+                    print("Please enter 1 or 0 only....")
+            else:
+                print("ID not existed")
+        except Exception:
+            print('ID not existed!!!!!!!!!!!')
+        
     @staticmethod
     def welcomeMsg():  # * This function is creted to display opening message to user when he enters in the program
         print('''\t******************************* WELCOME TO GUPTA EXPRESS ONLINE RESERVATION PORTAL *******************************
 1) GET TRAIN INFROMATION                                                                                  2) BOOK TICKETS
-3) CANCEL TICKETS                                                                                         4) EXIT PORTAL''')
+3) CANCEL TICKETS                                                                                         4) ACCESS YOUR INFORMATION
+5) EXIT''')
 
     @staticmethod
     def progressBar():  # * This function will display a progress bar, it is made for user experience call this function to use it
@@ -279,7 +315,12 @@ if __name__ == "__main__":  # * This statement will not allow to access it's cod
                 time.sleep(1.5)
                 guptaExpress.cancel_ticket()
                 time.sleep(2)
-            elif (select == 4):  # * If 4 is given the program will be closed with a closing message
+            elif (select==4):
+                guptaExpress.progressBar()
+                time.sleep(1.5)
+                guptaExpress.yourInfo()
+                time.sleep(2)
+            elif (select == 5):  # * If 5 is given the program will be closed with a closing message
                 print("\t#############################################  Thanks for using our portal  #############################################")
                 time.sleep(3)
                 exit()
